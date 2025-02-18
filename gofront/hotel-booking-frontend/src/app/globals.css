@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Исправляем цвет текста в полях ввода */
+input {
+  color: black !important;  /* Черный текст */
+  background-color: white !important; /* Белый фон */
+  border: 1px solid #ccc; /* Светлая рамка */
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* Для тёмной темы (если используется dark mode) */
+@media (prefers-color-scheme: dark) {
+  input {
+    color: white !important;
+    background-color: #222 !important;
+    border: 1px solid #555;
+  }
+}
+
+/* Убираем серый цвет у текста карточек */
+.card-text {
+  color: black !important;
+}
+
+/* Календарь исправления (react-datepicker) */
+.react-datepicker {
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.react-datepicker__header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: black !important;
+  font-weight: bold;
+}
+
+.react-datepicker__day,
+.react-datepicker__day-name {
+  color: black !important;
+  font-weight: bold;
+}
+
+.react-datepicker__day--selected {
+  background-color: #1E90FF !important;
+  color: white !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #aaa !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #1E90FF !important;
+  color: white !important;
+}
+
+/* Убираем перекрытие календаря другими элементами */
+.react-datepicker-popper {
+  z-index: 1050 !important;
+}
