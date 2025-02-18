@@ -1,0 +1,13 @@
+package models
+
+import "time"
+
+// User — модель для хранения пользователей
+type User struct {
+	ID        string    `json:"id,omitempty" bson:"_id,omitempty"`
+	Username  string    `json:"username" bson:"username"`
+	Email     string    `json:"email" bson:"email"`
+	Password  string    `json:"password" bson:"password"`
+	Role      string    `json:"role" bson:"role"`
+	CreatedAt time.Time `json:"createdAt" bson:"createdAt"`
+}
